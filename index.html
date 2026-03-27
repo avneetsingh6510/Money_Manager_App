@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Money Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <center>
+            <h1>Money Manager</h1>
+        </center>
+
+        <div class="summary">
+            <div>Income: ₹<span id="income">0</span></div>
+            <div>Expense: ₹<span id="expense">0</span></div>
+            <div>Balance: ₹<span id="balance">0</span></div>
+        </div>
+
+        <button id="addBtn">+ Add Transaction</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Category</th>
+                    <th>SubCategory</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="transactionList"></tbody>
+        </table>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2>Add Transaction</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <form id="transactionForm">
+                            <input type="hidden" id="txId">
+
+                            <input type="number" id="amount" placeholder="Amount" required>
+                            <input type="date" id="date">
+                    </tr>
+                    <tr>
+                        <div>
+                            <th id="modaltable"><label><input type="radio" name="category" value="Income"> Income</label></th>
+                            <th id="modaltable"><label><input type="radio" name="category" value="Expense"> Expense</label></th>
+                        </div>
+                    </tr>
+                    <tr>
+                        <select id="subCategory">
+                            <option value="">Select Subcategory</option>
+                        </select>
+                    </tr>
+                    <tr>
+                        <input type="text" id="description" placeholder="Description">
+                    </tr>
+                    <tr>
+                        <th id="modaltable">
+                        <button type="submit">Save</button></th>
+                        <th id="modaltable"><button type="button" id="closeModal">Cancel</button>
+                        </form>
+                        </th>
+                    </tr>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
